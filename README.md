@@ -1,7 +1,5 @@
 # Grup37_MicroProje
 
-# 🏠 PIC16F877A Home Automation System
-
 ![Project Status](https://img.shields.io/badge/Status-Development-yellow)
 ![Microcontroller](https://img.shields.io/badge/MCU-PIC16F877A-blue)
 ![Language](https://img.shields.io/badge/Language-Assembly%20%2F%20Python-green)
