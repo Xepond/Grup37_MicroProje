@@ -2,13 +2,10 @@
 ; PROJE: Board #1 - Ev ?klimlendirme Sistemi (TAM DÜZELT?LM?? VERS?YON)
 ; ??LEMC?: PIC16F877A
 ; FREKANS: 4 MHz (XT)
-; ==============================================================================
-; DÜZELTMELER:
-; 1. Keypad giri?i tamamen yeniden yaz?ld? (debounce + ad?m bazl?)
-; 2. Interrupt sadece uyand?rma yap?yor, tu? okuma main'de
-; 3. Giri? s?ras?nda gerçek zamanl? ekran güncellemesi
-; 4. Fan mant??? hassas kontrol (25.0 vs 25.1 ayr?m?)
-; ==============================================================================
+;Haz?rlayanlar:
+;152120221169, Süleyman Efe POLAT, Computer Engineering
+;152120221116,Emirhan KES?M, Computer Engineering
+
 
 #include <xc.inc>
 
@@ -113,7 +110,6 @@ MAIN:
     CLRF INPUT_STEP
 
 MAIN_LOOP:
-    CALL SYSTEM_INIT
     ; --- MOD KONTROLÜ ---
     MOVF SYSTEM_MODE, W
     SUBLW 1
@@ -573,7 +569,6 @@ ISR_UART_HANDLER:
     ANDWF RX_DATA, W
     MOVWF DESIRED_TEMP_FRAC
     RETURN
-    
 SET_INT:
     MOVLW 0x3F
     ANDWF RX_DATA, W
@@ -777,6 +772,10 @@ BCD_END:
     MOVF KEY_PRESSED, W
     MOVWF DISP_DIG2     ; Kalan? birler basama??na yaz
     RETURN
+
+; ==============================================================================
+; NORMAL MOD EKRAN TARAMA
+; ==============================================================================
 
 ; ==============================================================================
 ; EKRAN TARAMA (NOKTA DESTEKL?)
