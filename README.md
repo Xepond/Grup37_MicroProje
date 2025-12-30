@@ -1,15 +1,17 @@
 # Grup37_MicroProje
 
+# 🏠 PIC16F877A Home Automation System
+
 ![Project Status](https://img.shields.io/badge/Status-Development-yellow)
 ![Microcontroller](https://img.shields.io/badge/MCU-PIC16F877A-blue)
 ![Language](https://img.shields.io/badge/Language-Assembly%20%2F%20Python-green)
 ![Simulation](https://img.shields.io/badge/Simulation-PICSimLab-orange)
 
-[cite_start]Bu proje, **ESOGÜ Bilgisayar Mühendisliği "Introduction to Microcomputers"** dersi (2025-2026 Güz) dönem projesi kapsamında geliştirilmiştir[cite: 1, 2, 3]. [cite_start]Proje, iki ayrı PIC16F877A mikrodenetleyicisi ve bir PC istemci uygulaması kullanarak sensör tabanlı bir ev otomasyon sistemini simüle eder[cite: 32].
+Bu proje, **ESOGÜ Bilgisayar Mühendisliği "Introduction to Microcomputers"** dersi (2025-2026 Güz) dönem projesi kapsamında geliştirilmiştir. Proje, iki ayrı PIC16F877A mikrodenetleyicisi ve bir PC istemci uygulaması kullanarak sensör tabanlı bir ev otomasyon sistemini simüle eder.
 
 ## 📋 Proje Özeti
 
-[cite_start]Sistem, UART üzerinden haberleşen üç ana bileşenden oluşur [cite: 34-37]:
+Sistem, UART üzerinden haberleşen üç ana bileşenden oluşur:
 1.  **Board #1 (Klima Sistemi):** Sıcaklık kontrolü, fan hızı yönetimi ve kullanıcı giriş arayüzü.
 2.  **Board #2 (Perde & Çevre Kontrolü):** Işık/Basınç sensörleri ve perde motor kontrolü.
 3.  **PC İstemcisi (Client):** Sistemi uzaktan izleyen ve yöneten masaüstü uygulaması.
@@ -18,7 +20,7 @@
 
 ## 🛠 Donanım Mimarisi (PICSimLab)
 
-[cite_start]Simülasyon için **PICSimLab** ve **gpboard** kullanılmaktadır[cite: 40, 41].
+Simülasyon için **PICSimLab** ve **gpboard** kullanılmaktadır.
 
 | Özellik | Board #1: Klima Kontrol Ünitesi | Board #2: Perde Kontrol Ünitesi |
 | :--- | :--- | :--- |
@@ -32,9 +34,9 @@
 
 ## 📡 İletişim Protokolü
 
-[cite_start]Sistem **9600 baud rate** ve **8N1** formatında haberleşir[cite: 310].
+Sistem **9600 baud rate** ve **8N1** formatında haberleşir.
 
-### [cite_start]Board #1 (Klima) Komut Seti [cite: 675]
+### Board #1 (Klima) Komut Seti
 
 | Komut (Binary) | Açıklama |
 | :--- | :--- |
@@ -46,7 +48,7 @@
 | `10xxxxxx` | İstenen Sıcaklık Ayarla (Ondalık - 6 bit) |
 | `11xxxxxx` | İstenen Sıcaklık Ayarla (Tam Sayı - 6 bit) |
 
-### [cite_start]Board #2 (Perde) Komut Seti [cite: 719]
+### Board #2 (Perde) Komut Seti
 
 | Komut (Binary) | Açıklama |
 | :--- | :--- |
@@ -66,8 +68,8 @@
 ## 🚀 Kurulum ve Çalıştırma
 
 ### Gereksinimler
-* [cite_start][PICSimLab](https://lcgamboa.github.io/picsimlab/) (v0.9.2+) [cite: 40]
-* [cite_start]**Sanal Seri Port Sürücüsü:** Windows için `com0com`, Linux için `tty0tty` [cite: 796-797].
+* [PICSimLab](https://lcgamboa.github.io/picsimlab/) (v0.9.2+)
+* **Sanal Seri Port Sürücüsü:** Windows için `com0com`, Linux için `tty0tty`.
 * **Derleyiciler:** MPASM (Assembly), Python 3.x veya GCC (PC Uygulaması).
 
 ### Adımlar
