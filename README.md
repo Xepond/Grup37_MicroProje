@@ -1,6 +1,6 @@
 # Grup37_MicroProje
 
-![Project Status](https://img.shields.io/badge/Status-Development-yellow)
+![Project Status](https://img.shields.io/badge/Status-Completed-brightgreen)
 ![Microcontroller](https://img.shields.io/badge/MCU-PIC16F877A-blue)
 ![Language](https://img.shields.io/badge/Language-Assembly%20%2F%20Python-green)
 ![Simulation](https://img.shields.io/badge/Simulation-PICSimLab-orange)
@@ -73,10 +73,10 @@ Sistem **9600 baud rate** ve **8N1** formatında haberleşir.
 ### Adımlar
 1.  **Sanal Portları Ayarlayın:** `COM1` <-> `COM2` ve `COM3` <-> `COM4` çiftlerini oluşturun.
 2.  **PICSimLab'ı Başlatın:**
-    * **Board 1:** `.hex` dosyasını yükleyin, Seri Port: `COM2`.
-    * **Board 2:** `.hex` dosyasını yükleyin, Seri Port: `COM4`.
+    * **Board 1:** `BOARD1_klima` klasöründeki `.hex` dosyasını yükleyin, Seri Port: `COM2`.
+    * **Board 2:** `BOARD2_perde` klasöründeki `.hex` dosyasını yükleyin, Seri Port: `COM4`.
 3.  **PC Uygulamasını Çalıştırın:**
-    * Uygulama üzerinden `COM1` ve `COM3` portlarına bağlanın.
+    * `pc_api` klasöründeki uygulamayı başlatın ve `COM1` - `COM3` portlarına bağlanın.
 
 ---
 
@@ -84,11 +84,9 @@ Sistem **9600 baud rate** ve **8N1** formatında haberleşir.
 
 ```text
 .
-├── src/
-│   ├── board1_assembly/   # Klima Kontrol Ünitesi (.asm)
-│   ├── board2_assembly/   # Perde Kontrol Ünitesi (.asm)
-│   └── pc_application/    # PC Arayüzü ve API (Python/C++)
-├── docs/                  # Proje Raporu ve Şemalar
-├── simulation/            # PICSimLab Workspace dosyaları
-├── .gitignore
-└── README.md
+├── BOARD1_klima/       # Board #1 (Klima) Assembly kaynak kodları ve .hex dosyası
+├── BOARD2_perde/       # Board #2 (Perde) Assembly kaynak kodları ve .hex dosyası
+├── pc_api/             # PC İstemci Uygulaması ve API kodları
+├── Proje_Raporu.pdf    # Proje detaylarını içeren rapor dosyası
+├── .gitignore          # Gereksiz dosyaların takibini önleyen ayar dosyası
+└── README.md           # Proje dökümantasyonu
